@@ -116,11 +116,10 @@ export default function WishlistPage({ onBackToParty }) {
         <TreasureChest size={70} />
         <div>
           <h1 className="comic-section-heading" style={{ fontSize: '1.85rem', justifyContent: 'center' }}>
-            <Gift size={30} color="#ec4899" />
             <span>Worüber Alina sich freuen würde</span>
           </h1>
-          <p className="section-desc-text" style={{ marginBottom: 0, marginTop: '0.35rem', textAlign: 'center' }}>
-            Hier findest du Ideen, wie du Alina eine Freude machen kannst. Bei größeren Wünschen kann man sich ganz unkompliziert zusammentun!
+          <p className="section-desc-text" style={{ marginBottom: 0, marginTop: '0.35rem', textAlign: 'center', maxWidth: '620px', lineHeight: '1.5' }}>
+            Hier findest du ein paar Ideen, wie du Alina eine Freude machen kannst. Das sind natürlich alles nur Inspirationen – die Hauptsache ist, dass ihr kommt und mitfeiert, Alina freut sich auch so riesig auf euch! Bei größeren Wünschen kann man sich ganz unkompliziert zusammentun.
           </p>
         </div>
       </div>
