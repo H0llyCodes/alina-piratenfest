@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getGuestMessages, addGuestMessage } from '../services/storage';
-import { Send, Mail } from 'lucide-react';
+import { getGuestMessages, addGuestMessage, removeGuestMessage } from '../services/storage';
+import { Send, Mail, Trash2 } from 'lucide-react';
 
 export default function GuestMessages() {
   const [messages, setMessages] = useState([]);
@@ -24,6 +24,12 @@ export default function GuestMessages() {
     setSender('');
     setText('');
     setShowForm(false);
+  };
+
+  const handleDelete = async (id, senderName) => {
+    if (confirm(`Möchtest du den Gruß von "${senderName}" wirklich löschen?`)) {
+      setMessages(await removeGuestMessage(id));
+    }
   };
 
   return (
@@ -94,8 +100,17 @@ export default function GuestMessages() {
             borderRadius: '12px',
             boxShadow: '0 2px 0 var(--outline-dark)'
           }}>
-            <div style={{ fontFamily: 'var(--font-comic)', fontSize: '1rem', fontWeight: 700, color: '#0284c7', marginBottom: '0.15rem' }}>
-              🏴‍☠️ {msg.sender}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.15rem' }}>
+              <div style={{ fontFamily: 'var(--font-comic)', fontSize: '1rem', fontWeight: 700, color: '#0284c7' }}>
+                🏴‍☠️ {msg.sender}
+              </div>
+              <button
+                onClick={() => handleDelete(msg.id, msg.sender)}
+                title="Gruß löschen"
+                style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: '2px', display: 'inline-flex' }}
+              >
+                <Trash2 size={15} />
+              </button>
             </div>
             <div style={{ fontSize: '0.92rem', color: 'var(--text-primary)', fontStyle: 'italic' }}>
               „{msg.text}“

@@ -301,6 +301,23 @@ export async function addNewWish(title, description, isGroupGift = false) {
   return updated;
 }
 
+export async function removeWish(wishId) {
+  if (supabaseClient) {
+    try {
+      const { error } = await supabaseClient.from('wishes').delete().eq('id', wishId);
+      if (!error) return await getWishes();
+      if (error) console.warn('Supabase removeWish Hinweis:', error.message);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  const wishes = await getWishes();
+  const updated = wishes.filter(w => w.id !== wishId);
+  localStorage.setItem(STORAGE_KEYS.WISHES, JSON.stringify(updated));
+  return updated;
+}
+
 // ------------------------------------------
 // GUEST MESSAGES (FLASCHENPOST)
 // ------------------------------------------
@@ -351,6 +368,23 @@ export async function addGuestMessage(sender, text) {
 
   const current = await getGuestMessages();
   const updated = [newMsg, ...current];
+  localStorage.setItem(STORAGE_KEYS.MESSAGES, JSON.stringify(updated));
+  return updated;
+}
+
+export async function removeGuestMessage(msgId) {
+  if (supabaseClient) {
+    try {
+      const { error } = await supabaseClient.from('guest_messages').delete().eq('id', msgId);
+      if (!error) return await getGuestMessages();
+      if (error) console.warn('Supabase removeGuestMessage Hinweis:', error.message);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  const current = await getGuestMessages();
+  const updated = current.filter(m => m.id !== msgId);
   localStorage.setItem(STORAGE_KEYS.MESSAGES, JSON.stringify(updated));
   return updated;
 }

@@ -114,7 +114,7 @@ export default function App() {
               onClick={handleAdminReset}
               style={{ background: 'none', border: 'none', color: '#94a3b8', fontSize: '0.8rem', cursor: 'pointer', fontFamily: 'var(--font-comic)' }}
             >
-              ⚙️ Zurücksetzen (PIN: ahoi)
+              ⚙️ Käpt'n-Bereich
             </button>
           </div>
         </footer>

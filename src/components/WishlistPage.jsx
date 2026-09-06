@@ -5,11 +5,12 @@ import {
   unclaimWish, 
   contributeToWish, 
   removeContributorFromWish,
-  addNewWish 
+  addNewWish,
+  removeWish 
 } from '../services/storage';
 import { TreasureChest } from './ComicAssets';
 import confetti from 'canvas-confetti';
-import { Gift, Check, X, Sparkles, Users, ArrowLeft, Plus } from 'lucide-react';
+import { Gift, Check, X, Sparkles, Users, ArrowLeft, Plus, Trash2 } from 'lucide-react';
 
 export default function WishlistPage({ onBackToParty }) {
   const [wishes, setWishes] = useState([]);
@@ -89,6 +90,12 @@ export default function WishlistPage({ onBackToParty }) {
     setNewTitle('');
     setNewDesc('');
     setShowAddForm(false);
+  };
+
+  const handleDeleteWish = async (id, title) => {
+    if (confirm(`Möchtest du den Wunsch "${title}" wirklich löschen?`)) {
+      setWishes(await removeWish(id));
+    }
   };
 
   const groupWishes = wishes.filter(w => w.isGroupGift);
@@ -209,10 +216,19 @@ export default function WishlistPage({ onBackToParty }) {
                   <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem' }}>
                       <span className="wish-card-title">{wish.title}</span>
-                      <span className="group-gift-badge">
-                        <Users size={12} />
-                        <span>{count} {count === 1 ? 'Person' : 'Personen'} dabei</span>
-                      </span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                        <span className="group-gift-badge">
+                          <Users size={12} />
+                          <span>{count} {count === 1 ? 'Person' : 'Personen'} dabei</span>
+                        </span>
+                        <button
+                          onClick={() => handleDeleteWish(wish.id, wish.title)}
+                          title="Wunsch löschen"
+                          style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: '2px', display: 'inline-flex' }}
+                        >
+                          <Trash2 size={15} />
+                        </button>
+                      </div>
                     </div>
 
                     {wish.description && (
@@ -316,7 +332,16 @@ export default function WishlistPage({ onBackToParty }) {
             return (
               <div key={wish.id} className={`comic-wish-card ${isClaimed ? 'is-claimed' : ''}`}>
                 <div>
-                  <div className="wish-card-title">{wish.title}</div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <div className="wish-card-title">{wish.title}</div>
+                    <button
+                      onClick={() => handleDeleteWish(wish.id, wish.title)}
+                      title="Wunsch löschen"
+                      style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: '2px', display: 'inline-flex' }}
+                    >
+                      <Trash2 size={15} />
+                    </button>
+                  </div>
                   {wish.description && (
                     <div className="wish-card-desc">{wish.description}</div>
                   )}
