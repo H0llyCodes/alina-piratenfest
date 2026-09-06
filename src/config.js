@@ -19,8 +19,8 @@ export const PARTY_CONFIG = {
   locationHint: "Klingeln bei Alina. Folgt einfach den Lichtern und Piraten-Flaggen!",
 
   // Dresscode
-  dresscode: "Piraten-Kluft erwünscht! (Dreispitz, Bandana, Augenklappe oder Ringelshirt)",
-  dresscodeHint: "Wer ohne Piraten-Accessoire kommt, muss zur Strafe kielholen!",
+  dresscode: "Piraten-Outfit erwünscht!",
+  dresscodeHint: "Werdet gerne kreativ",
 
   // Was die Gastgeber stellen
   hostSupplies: [

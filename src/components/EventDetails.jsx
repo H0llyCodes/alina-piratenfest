@@ -47,7 +47,7 @@ export default function EventDetails() {
         <div className="comic-info-bubble text-center-bubble">
           <div className="bubble-label-text">🏴‍☠️ Piraten-Kluft</div>
           <div className="bubble-main-value">Piraten-Outfit erwünscht!</div>
-          <div className="bubble-hint-value">Augenklappe, Hut oder Ringelshirt</div>
+          <div className="bubble-hint-value">Werdet gerne kreativ</div>
         </div>
       </div>
 

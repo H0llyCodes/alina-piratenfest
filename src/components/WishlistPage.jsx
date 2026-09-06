@@ -119,7 +119,7 @@ export default function WishlistPage({ onBackToParty }) {
             <span>Worüber Alina sich freuen würde</span>
           </h1>
           <p className="section-desc-text" style={{ marginBottom: 0, marginTop: '0.35rem', textAlign: 'center', maxWidth: '580px', lineHeight: '1.5' }}>
-            Ihr müsst mir wirklich gar nichts schenken – das Schönste für mich ist einfach, Zeit mit euch zu verbringen und dass wir ein buntes Buffet zusammenbekommen! Wer mir trotzdem unbedingt eine kleine Freude machen möchte, findet hier ein paar Ideen:
+            Hier ein paar Ideen, über die sich Alina freuen würde. Aber es ist wirklich KEIN Muss irgendwas zu schenken – ich freu mich auf euch und eure coolen Dancemoves!
           </p>
         </div>
       </div>
