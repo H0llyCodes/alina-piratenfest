@@ -43,6 +43,61 @@ export const PARTY_CONFIG = {
   // Keine Platzhalter – die Liste ist leer zum echten Eintragen!
   initialBuffetItems: [],
 
-  // Keine Platzhalter – Wünsche können selbst eingetragen werden!
-  initialWishes: []
+  // Initiale Wünsche für Alina
+  initialWishes: [
+    {
+      id: "wish-gymhandschuhe",
+      title: "Gymhandschuhe",
+      description: "In süßem Pink, Rosa oder Lila",
+      isGroupGift: false,
+      contributors: [],
+      claimedBy: null,
+      claimedAt: null
+    },
+    {
+      id: "wish-charms-perlen",
+      title: "Charms fürs Basteln mit Perlen",
+      description: "Schöne bunte Charms und Anhänger zum Selberbasteln",
+      isGroupGift: false,
+      contributors: [],
+      claimedBy: null,
+      claimedAt: null
+    },
+    {
+      id: "wish-kirschkernkissen",
+      title: "Kirschkernkissen",
+      description: "Kuscheliges Kirschkernkissen zum Wärmen",
+      isGroupGift: false,
+      contributors: [],
+      claimedBy: null,
+      claimedAt: null
+    },
+    {
+      id: "wish-proteinshaker",
+      title: "Süßer Proteinshaker",
+      description: "In Rosa, Lila oder Dunkelrot",
+      isGroupGift: false,
+      contributors: [],
+      claimedBy: null,
+      claimedAt: null
+    },
+    {
+      id: "wish-potterypainting",
+      title: "Potterypainting (Keramik bemalen)",
+      description: "Gutschein oder gemeinsames Keramik-Bemalen",
+      isGroupGift: true,
+      contributors: [],
+      claimedBy: null,
+      claimedAt: null
+    },
+    {
+      id: "wish-malstifte-textmarker",
+      title: "Schöne Malstifte im Textmarker-Style",
+      description: "Coole Stifte & Textmarker in Pastell- oder bunten Farben",
+      isGroupGift: false,
+      contributors: [],
+      claimedBy: null,
+      claimedAt: null
+    }
+  ]
 };
