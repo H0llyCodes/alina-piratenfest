@@ -118,8 +118,8 @@ export default function WishlistPage({ onBackToParty }) {
           <h1 className="comic-section-heading" style={{ fontSize: '1.85rem', justifyContent: 'center' }}>
             <span>Worüber Alina sich freuen würde</span>
           </h1>
-          <p className="section-desc-text" style={{ marginBottom: 0, marginTop: '0.35rem', textAlign: 'center', maxWidth: '620px', lineHeight: '1.5' }}>
-            Hier findest du ein paar Ideen, wie du Alina eine Freude machen kannst. Das sind natürlich alles nur Inspirationen – die Hauptsache ist, dass ihr kommt und mitfeiert, Alina freut sich auch so riesig auf euch! Bei größeren Wünschen kann man sich ganz unkompliziert zusammentun.
+          <p className="section-desc-text" style={{ marginBottom: 0, marginTop: '0.35rem', textAlign: 'center', maxWidth: '580px', lineHeight: '1.5' }}>
+            Ihr müsst mir wirklich gar nichts schenken – das Schönste für mich ist einfach, Zeit mit euch zu verbringen und dass wir ein buntes Buffet zusammenbekommen! Wer mir trotzdem unbedingt eine kleine Freude machen möchte, findet hier ein paar Ideen:
           </p>
         </div>
       </div>
