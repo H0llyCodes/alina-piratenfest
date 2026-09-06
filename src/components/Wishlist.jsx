@@ -104,7 +104,7 @@ export default function Wishlist() {
                       value={name}
                       onChange={e => setName(e.target.value)}
                       className="comic-text-input"
-                      style={{ padding: '0.35rem 0.6rem', fontSize: '0.85rem', width: '130px' }}
+                      style={{ padding: '0.35rem 0.6rem', fontSize: '16px', width: '130px' }}
                       autoFocus
                     />
                     <button onClick={() => handleClaim(wish.id)} className="comic-claim-btn">

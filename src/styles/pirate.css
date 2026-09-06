@@ -58,9 +58,6 @@ body {
   overflow-x: hidden;
   max-width: 100%;
   width: 100%;
-}
-
-body {
   font-family: var(--font-body);
   color: var(--text-primary);
   line-height: 1.5;
@@ -720,7 +717,7 @@ body {
   border-radius: var(--radius-sm);
   padding: 0.6rem 0.85rem;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 16px; /* WICHTIG: Mindestens 16px verhindert das automatische iOS-Safari-Reintoomen */
   font-weight: 600;
   color: var(--text-primary);
   outline: none;
@@ -734,6 +731,11 @@ body {
 .comic-text-input:focus {
   border-color: var(--sky-deep);
   box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35);
+}
+
+/* Verhindert generelles Safari-Zooming auf Eingabefelder */
+input, textarea, select {
+  font-size: 16px;
 }
 
 /* Kategorie-Buttons im gleichen Comic-Design */

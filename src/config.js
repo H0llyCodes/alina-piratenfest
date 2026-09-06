@@ -66,7 +66,7 @@ export const PARTY_CONFIG = {
     {
       id: "wish-kirschkernkissen",
       title: "Kirschkernkissen",
-      description: "Kuscheliges Kirschkernkissen zum Wärmen",
+      description: "Kirschkernkissen zum Wärmen",
       isGroupGift: false,
       contributors: [],
       claimedBy: null,
